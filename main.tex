@@ -1,0 +1,267 @@
+
+\section{はじめに}
+脳梗塞や脳出血などの脳卒中の罹患率は高齢者において高く，少子高齢化が急
+速に進む我が国においては，脳卒中の後遺症である片麻痺の患者数が増加する
+ことが予想される．片麻痺は，大脳皮質の運動野に障害が生じることで発症し，
+一方の半身の運動機能が低下あるいは麻痺する障害であり，自立した生活が困
+難となる．そのため，片麻痺のリハビリテーションは，患者の生活の質
+（Quality of Life: QOL）の向上において極めて重要であり，効果的なリハビ
+リテーション方法の開発が求められている．
+
+片麻痺リハビリテーションにおいて有効な手法の一つにミラーセラピーがあ
+る. ミラーセラピーは，麻痺していない半身の動きを鏡に写して患者に提示し，
+非麻痺側の動作を鏡越しに観察することで，麻痺側の半身が動作しているよう
+視覚的に模倣するリハビリテーション手法である．これにより脳の神経可塑性
+が促進され，麻痺側の運動能力が向上する．
+
+近年，VR 技術を導入することでミラーセラピーの効果を向上させる試みがなさ
+れている\cite{Weber}\cite{Heinrich}\cite{Miclaus}．VR を利用することで，
+従来の鏡を用いた手法よりも高い没入感が得られることから，患者のモチベー
+ションが向上し，より効果的なリハビリテーションを提供することが可能とな
+る．しかしながら，従来のVRを活用したミラーセラピー手法には，十分なスペー
+スの確保が必要な場合や微細な指の動きを正確に反映することが困難であると
+いった課題が存在する．また，VR 空間内におけるリハビリテーションの効果を
+脳活動計測によって評価する研究は限られてい
+る\cite{Peng}\cite{Dordevic}\cite{Deng}．
+
+そこで本研究では，このような従来手法における課題を克服することを目的と
+して，新たなVRミラーセラピーシステムの構築を行った．具体的には，HMD の
+ハンドトラッキング機能を利用して，アバターの手指の動きをリアルタイムに
+反映させることで，微細な指動作の表現が可能なシステムを構築した．VR 空間
+内におけるミラーセラピーの効果を検証するために，血中ヘモグロビン濃度を
+計測する fNIRS を用いて脳活動の変動を計測し，VR ミラーセラピーの効果を
+評価した．
+
+\section{開発システム}
+\subsection{システム構成}
+図\ref{fig:system}には，新たに開発した VR ミラーセラピーシステムの概略
+を示す．ソフトウェアの開発環境には Unity を使用
+し，HMD には HTC 社製 Vive Pro Eye を用いた．ハンドトラッキングに
+は，Vivehandtracking を用い，HMD と PC の接続には SteamVR を使用した．
+また，人物を投影するアバターにはVR向け3Dアバターファイルフォーマットで
+ある VRM を採用した．
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1.0\linewidth]{./figure/System_modeledit.png}
+    \caption{システム構成}
+    \label{fig:system}
+\end{figure}
+
+\subsection{座標推定}
+頭部のトラッキングには，Vive Pro Eye と SteamVR Base Station 2.0 を用い
+た．SteamVR Base Station 2.0 から照射される赤外線により，HMD の位置情報
+を取得している．ハンドトラッキングは，HMD の前面カメラから受け取った映
+像をもとにして手指の座標推定を行うことで実現実装した．Vivehandtracking
+を使用して取得した手指の座標情報を，クォータニオンを用いて関節ごとの回
+転情報に変換することでアバターの手指の動きに反映した．クォータニオンに
+よる回転情報は，以下の定義に従って計算した．
+\begin{align}
+    \mathbf{q} &= \cos\left(\frac{\theta}{2}\right) 
+                 + \sin\left(\frac{\theta}{2}\right) \cdot \mathbf{v}
+\end{align}
+
+各関節の回転情報は次式により算出した．
+\begin{align}
+    \mathbf{q}_{\text{joint}} &= 
+    \mathbf{q}_{\text{parent}} \cdot 
+    \mathbf{q}_{\text{next}} \cdot 
+    \mathbf{q}_{\text{local}}
+\end{align}
+\begin{equation*}
+\begin{aligned}
+    \mathbf{q}_{\text{joint}}  &= \text{対象関節の最終的な回転} \\
+    \mathbf{q}_{\text{parent}} &= \text{親関節の回転} \\
+    \mathbf{q}_{\text{next}}   &= \text{次時刻の子関節方向への回転} \\
+    \mathbf{q}_{\text{local}}  &= \text{ローカル軸の補正回転}
+\end{aligned}
+\end{equation*}
+
+また，腕や肩などの座標推定には IK（Inverse Kinematics）を用いた．頭，左
+手首，右手首の 3 点の座標に基いて全身動作を計算することで，よりリアルな
+動作の再現が可能となる．なお，IK の実装には FinalIK の VRIK を使用した．
+ミラーセラピー機能の実装に際して，VRM のテクスチャを編集し，片腕が透明
+となるモデルを作成した．片手の各関節点の回転情報を矢状面に対して反転さ
+せて身体の鏡面映像を生成し，VR 空間内で自然な対称動作として表示させた．
+ミラーセラピー機能を使用している際の使用者の片手を図\ref{fig:Inusephoto}に，使用者が見てい
+る HMD に表示された映像を図\ref{fig:HMDdisp}に示す．
+
+\begin{figure}[htb]
+    \centering
+    \begin{minipage}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{./figure/Real_hand.png}
+        \subcaption{実際の手}
+        \label{fig:Inusephoto}
+    \end{minipage}
+    \begin{minipage}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{./figure/VR_mirrorhand.png}
+        \subcaption{HMD画面}
+        \label{fig:HMDdisp}
+    \end{minipage}
+    \caption{ミラーセラピー機能}
+\end{figure}
+
+\section{評価実験}
+
+開発したシステムに対して，VR ミラーセラピー 機能の効果を評価するための
+予備実験を行った．
+
+\subsection{実験環境}
+
+本研究で用いた機材は以下の通りである．
+
+\begin{itemize}
+    \item HMD: HTC Vive Pro Eye
+    \item HTC SteamVR Base Station 2.0 2基
+    \item 島津製作所 LABNIRS
+    \item Raspberry Pi（fNIRSとの同期に使用）
+\end{itemize}
+
+最初にキャップ状ホルダの上から HMD を装着した後，fNIRS プローブを設置し
+た．照明が外乱とならないよう，計測中は遮光生地の頭巾を被せた．実験中の
+様子を図\ref{fig:task}に示す．
+
+\begin{figure}[htb]
+    \begin{minipage}{0.5\hsize}
+        \includegraphics[width=0.9\linewidth]{./figure/Setting.png}
+    \end{minipage}
+    \begin{minipage}{0.5\hsize}
+        \includegraphics[width=0.9\linewidth]{./figure/Tapping.png}
+    \end{minipage}
+    \caption{実験中の様子}
+    \label{fig:task}
+\end{figure}
+
+\subsection{実験課題}
+
+予備実験は，20代の健常男性1名に対して行った．VR 空間内において人差し指
+と親指の指先をタップする課題を実施し，このときの脳活動を fNIRS により計
+測した．課題は 15 秒間のタッピングと 20 秒以上の休憩を繰り返すものであ
+り，このサイクルを 15 回行った．これを左手タッピング，ミラー左手タッピ
+ング，右手タッピングの順で連続して実施した．ここで，ミラー左手タッピン
+グとは，右手を動かしながら VR 空間内では左手の動作として表示させた状態
+を指す．この時，VR 空間内では右手は表示されず，左手のみが表示されている．
+ミラー左手タッピング時の HMD 内の映像を図\ref{fig:mirrortask}に示す．
+
+\begin{figure}[htb]
+    \begin{minipage}{0.5\hsize}
+        \includegraphics[width=0.9\linewidth]{./figure/Tapping_open.png}
+    \end{minipage}
+    \begin{minipage}{0.5\hsize}
+        \includegraphics[width=0.9\linewidth]{./figure/Tapping_close.png}
+    \end{minipage}
+    \caption{タッピング中のHMD画面}
+    \label{fig:mirrortask}
+\end{figure}
+
+\subsection{計測領域}
+
+タッピング課題中には動作している手の反対側の運動野の賦活が期待される\cite{Khan}\cite{Rahimpour}.そこで,計測領域は運動野を中心に,片側17チャネル,計34チャネルに設定した.
+運動野はブロードマン脳地図における第4野および第6野に相当する領域であり,図\ref{fig:brodmannmap}に示す.
+また,計測領域におけるプローブ配置をマッピングしたものを図\ref{fig:probe}に示す.
+なお,HMDの装着バンドの位置の影響により,頭頂部のチャネルは計測することが出来なかった.
+
+\begin{figure}[htb]
+    \centering
+    \begin{minipage}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{./figure/Broadman_fitting.png}
+        \subcaption{ブロードマン脳地図}
+        \label{fig:brodmannmap}
+    \end{minipage}
+    \begin{minipage}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{./figure/Probe_pos.png}
+        \subcaption{計測に用いたプローブ配置}
+        \label{fig:probe}
+    \end{minipage}
+
+    \caption{計測領域}
+    \label{fig:measurementarea}
+\end{figure}
+
+\section{解析}
+\subsection{前処理}
+はじめに,fNIRS信号の前処理として,血流動態分離法を適用し,全身性成分と脳機能成分に分離した.\cite{Yamada}
+さらに,循環器由来の成分を除去するため,0.01Hzから0.09Hzのバンドパスフィルタを適用した.\cite{Klein}
+加えて,タスク中の脳活動の変動を確認するため,課題開始前の10秒間の脳活動の平均値を基準値として算出し,ベースライン補正を行った.
+前処理後のタスク中のfNIRS信号の一例を,図\ref{fig:preprocessing}に示す.
+また,データの分布を確認するため,箱ひげ図を作成した.例としてチャネル22の箱ひげ図を図\ref{fig:boxplot}に示す.
+図\ref{fig:boxplot}から,チャネル22において,ミラー左手タッピングは右手タッピングに比べて血流変動範囲に差が見られ,特に外れ値が多いことが分かる.
+
+\begin{figure}[htb]
+    \centering
+    \begin{minipage}{0.65\hsize}
+        \includegraphics[width=\linewidth]{./figure/Mineta_CH28_ZeroCorrMillarR.pdf}
+        \subcaption{前処理後の信号}
+        \label{fig:preprocessing}
+    \end{minipage}
+
+    \begin{minipage}{0.65\hsize}
+        \includegraphics[width=\linewidth]{./figure/boxplot22.pdf}
+        \subcaption{タスク間の信号分布}
+        \label{fig:boxplot}
+    \end{minipage}
+
+    \caption{前処理後の脳活動の時系列データ}
+\end{figure}
+
+\subsection{解析方法}
+左手タッピング,ミラー左手タッピング,右手タッピングの各タスクにおける脳活動の時系列データを比較した.
+脳活動は正規分布に従うとは限らないため,タスク間の比較にはノンパラメトリック検定であるWilcoxon符号順位検定を用いて有意差を評価した.
+
+\section{結果と考察}
+\subsection{脳活動の比較}
+各チャネルごとに算出したP値を,平均脳上にプロットした結果を図\ref{fig:Pvalue_comparison}に示す.P値が低いほど赤,高いほど青で示されており,赤い部分は有意差がある領域を示している.
+
+\begin{figure}[htb]
+    \centering
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{./figure/L_MLedit.png}
+        \subcaption{左手とミラー左手の比較}
+        \label{fig:L_ML}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{./figure/ML_Redit.png}
+        \subcaption{ミラー左手と右手の比較}
+        \label{fig:ML_R}
+    \end{minipage}
+
+    %\vspace{0.2cm}
+
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{./figure/L_Redit.png}
+        \subcaption{左手と右手の比較}
+        \label{fig:L_R}
+    \end{minipage}
+
+    \caption{タスク間のP値比較}
+    \label{fig:Pvalue_comparison}
+\end{figure}
+
+図\ref{fig:L_ML}では,有意差が見られるチャネルが散在しており,特定の領域に集中していないことが分かる.
+一方,図\ref{fig:ML_R}では,特に左脳の前頭葉側の領域に有意差が偏っていることが確認された.
+同様に,図\ref{fig:L_R}においても,左脳の前頭葉側の領域に有意差が認められた.
+
+\subsection{考察}
+左手タッピング時とミラー左手タッピング時の比較では,特定の領域に有意差が見られた.
+しかし,ミラー効果が期待される右脳の運動野領域では,有意差は確認されなかった.
+これは,ミラー左手タッピング時に,左手の動作を視覚的に模倣することで右側の運動野の活動が増加すると予想されたが,その効果が現れなかったことを示唆している.
+この要因として,計測データにノイズの大きいチャネルが含まれていた可能性が考えられる.
+また,VR空間への没入感の不足が,ミラーセラピー効果の発現に影響を与えた可能性もある.
+
+\section{まとめと今後の展望}
+本研究では,片麻痺リハビリテーションのためのVRミラーセラピーシステムの構築について,HMDのハンドトラッキング機能を活用し,VRミラーセラピーにおける手指動作の反映手法について報告した.
+さらに,予備実験として,実際にミラーセラピーの効果を検証するため,手指に限定したタスクであるタッピング課題を実施し,fNIRSを用いた脳活動の計測を行った.
+
+解析結果から,ミラーセラピー効果が期待される右脳の運動野の活動に有意差が確認できなかったことから,VRミラーセラピーの効果が不十分である可能性が示唆された.
+今後は,VR空間内の没入感を向上させるための環境整備や,実験タスクの工夫を行うことで,リハビリテーション効果の向上を図る必要がある.
+また,fNIRS計測時にノイズの大きいチャネルが多く確認されたことから,計測時の外乱を低減させるための計測環境の改善が求められる.
+現状使用しているハンドトラッキングモデルであるVivehandtrackingは,指の動きを検出する際の精度が低く,微細な動きの正確な反映が困難である.
+したがって,より高精度なハンドトラッキング技術の導入を検討している.
+加えて,本報告では手指の動作に限定したが,今後はWebカメラの映像を用いて,MediaPipeなどの姿勢推定モデルを活用することで,全身の動作を取得し,リハビリテーション効果の包括的な評価する予定である.
+
+今後の課題として,没入感の向上に向けた環境整備や,実験タスクの工夫に加え,VRミラーセラピーの効果をより精緻に検証する必要がある.
+さらに,被験者数を増加させ,より詳細な分析と評価を行う予定である.

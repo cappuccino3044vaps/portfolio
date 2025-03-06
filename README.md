@@ -11,7 +11,7 @@ http://qiita.com/cappuccino3044
 https://github.com/cappuccino3044vaps/Atcoder
 
 チャットボット
-https://github.com/cappuccino3044vaps/Onnet
+https://github.com/cappuccino3044vaps/Chat
 
 Cofee
 https://github.com/cappuccino3044vaps/Coffee

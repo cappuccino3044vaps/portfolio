@@ -14,10 +14,8 @@ https://github.com/cappuccino3044vaps/Atcoder
 https://github.com/cappuccino3044vaps/Chat
 
 Cofee（RasberryPiを用いたセンサ付きコースターの開発）
+ 
 https://github.com/cappuccino3044vaps/Coffee
 
 fNIRS
 https://github.com/cappuccino3044vaps/fNIRS_Learning
-
-docker
-https://github.com/cappuccino3044vaps/Chat_docker

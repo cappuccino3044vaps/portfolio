@@ -7,13 +7,13 @@
 Qiita
 http://qiita.com/cappuccino3044
 
-競技プログラミング
+競技プログラミングの勉強用
 https://github.com/cappuccino3044vaps/Atcoder
 
-チャットボット
+チャットボット開発
 https://github.com/cappuccino3044vaps/Chat
 
-Cofee
+Cofee（RasberryPiを用いたセンサ付きコースターの開発）
 https://github.com/cappuccino3044vaps/Coffee
 
 fNIRS

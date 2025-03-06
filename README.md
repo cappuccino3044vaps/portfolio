@@ -7,9 +7,6 @@
 Qiita
 http://qiita.com/cappuccino3044
 
-ミラーセラピーシステムのUnityプロジェクト
-https://github.com/cappuccino3044vaps/MirrorTherapy
-
 競技プログラミング
 https://github.com/cappuccino3044vaps/Atcoder
 

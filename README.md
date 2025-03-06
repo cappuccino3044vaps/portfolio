@@ -1,11 +1,11 @@
 # portfolio
-
+研究ではVR技術を用いたリハビリテーションシステムの開発に取り組んでいます。
 
 ---
 
 ## プロジェクトリンク
 Qiita
-http://qqiita.com/cappuccino3044
+http://qiita.com/cappuccino3044
 
 ミラーセラピーシステムのUnityプロジェクト
 https://github.com/cappuccino3044vaps/MirrorTherapy

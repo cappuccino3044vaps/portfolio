@@ -1,4 +1,4 @@
-# <div align="center">🚀 エンジニアポートフォリオ</div>
+# <div align="center">エンジニアポートフォリオ</div>
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 
 </div>
 
-## 📋 目次
+## 目次
 - [自己紹介](#自己紹介)
 - [研究内容](#研究内容)
 - [技術スキル](#技術スキル)
@@ -17,15 +17,16 @@
 
 ---
 
-## 👨‍🔬 自己紹介
-VR技術を活用したリハビリテーションシステムの研究開発に取り組んでいます。
-
+## 自己紹介
+大学院ではVR技術を活用したリハビリテーションシステムの研究開発に取り組んでいます。
+研究外ではLLMや機械学習、電子工作などに自主的に取り組んでいます。
+https://github.com/cappuccino3044vaps
 <div align="center">
   <img src="./figures/profile.jpg" alt="プロフィール写真" width="300px" style="border-radius: 50%;">
 </div>
 
 <details>
-<summary>💼 スキルチャート（クリックして展開）</summary>
+<summary>スキルチャート（クリックして展開）</summary>
 <div align="center">
 
 | スキル | レベル |
@@ -41,9 +42,9 @@ VR技術を活用したリハビリテーションシステムの研究開発に
 
 ---
 
-## 🔬 研究内容
+## 研究内容
 
-### 🎮 VRリハビリテーションシステム
+### VRリハビリテーションシステム
 > 姿勢推定モデルを使って関節座標を取得し、解析を行っています。これにより、リハビリテーションの効果を定量的に評価できるシステムの開発を進めています。
 
 <div align="center">
@@ -59,7 +60,7 @@ VR技術を活用したリハビリテーションシステムの研究開発に
   </table>
 </div>
 
-### 🖥️ VR開発環境
+### VR開発環境
 VRシステムはUnityを使用して実装しています。患者さんが楽しみながらリハビリに取り組める環境の構築を目指しています。
 
 <div align="center">
@@ -71,16 +72,16 @@ VRシステムはUnityを使用して実装しています。患者さんが楽�
   </table>
 </div>
 
-### 🧠 脳血流計測実験
+### 脳血流計測実験
 <div align="center">
   <img src="./figures/experiment.png" alt="実験風景" width="350px">
   <p><i>VRゴーグルと脳血流計測キャップを併用した実験風景</i></p>
 </div>
 
 <details>
-<summary>📊 データ解析の詳細（クリックして展開）</summary>
+<summary>データ解析の詳細（クリックして展開）</summary>
 
-取得した脳血流データに信号処理を施して、統計的な検定を行います。これにより、リハビリ効果の科学的検証を行っています。
+取得した脳血流データに信号処理を施して、統計的な検定を行います。主にmatlabを使っています。
 
 <div align="center">
   <img src="./figures/BrainMap.png" alt="脳活動マッピング" width="450px">
@@ -91,19 +92,19 @@ VRシステムはUnityを使用して実装しています。患者さんが楽�
 
 ---
 
-## 💻 技術スキル
+## 技術スキル
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>📈 信号処理</h3>
+      <h3>信号処理</h3>
       <p>生体信号などのノイズを含む時系列データに対して、カルマンフィルタなどの手法を用いた信号処理技術を開発しています。</p>
       <div align="center">
         <img src="./figures/Kalmanfilter.pdf" alt="カルマンフィルタ適用例" width="300px">
       </div>
     </td>
     <td width="50%" valign="top">
-      <h3>🔌 IoT開発</h3>
+      <h3>IoT開発</h3>
       <p>RaspberryPiを使った電子工作により、センシングやIoTデバイスの開発を行っています。</p>
       <div align="center">
         <img src="./figures/RasberryPi.jpg" alt="RaspberryPiプロジェクト" width="300px">
@@ -112,55 +113,17 @@ VRシステムはUnityを使用して実装しています。患者さんが楽�
   </tr>
 </table>
 
----
-
-## 📂 プロジェクト一覧
+## 趣味
 
 <div align="center">
-  <table border="0" cellspacing="10">
-    <tr>
-      <td align="center">
-        <h3>💬 チャットボット開発</h3>
-        <p>自然言語処理を活用した会話型アシスタントの開発</p>
-        <a href="https://github.com/cappuccino3044vaps/Chat">
-          <img src="https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge&logo=github" alt="GitHub Repository">
-        </a>
-      </td>
-      <td align="center">
-        <h3>☕ Coffee - スマートコースター</h3>
-        <p>RaspberryPiを用いたセンサ付きコースターの開発</p>
-        <a href="https://github.com/cappuccino3044vaps/Coffee">
-          <img src="https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge&logo=github" alt="GitHub Repository">
-        </a>
-      </td>
-    </tr>
-  </table>
-</div>
-
----
-
-## 🎯 趣味
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">🎮<br>ゲーム</td>
-      <td align="center">📚<br>読書</td>
-      <td align="center">🎹<br>ピアノ演奏</td>
-    </tr>
-    <tr>
-      <td align="center">♟️<br>将棋</td>
-      <td align="center">🍳<br>料理・お菓子作り</td>
-      <td align="center">🏕️<br>キャンプ・釣り</td>
-    </tr>
-  </table>
+  <p>ゲーム・読書・ピアノ演奏・将棋・料理/お菓子作り・アウトドア活動（キャンプ・釣り）</p>
 </div>
 
 ---
 
 <div align="center">
 
-## 📬 連絡先
+## 連絡先
 
 <a href="mailto:vapsok299@gmail.com">
   <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail" alt="Email">

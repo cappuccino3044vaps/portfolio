@@ -1,4 +1,4 @@
-# <div align="center">エンジニアポートフォリオ</div>
+# <div align="center">ポートフォリオ</div>
 
 <div align="center">
 
@@ -35,7 +35,7 @@ https://github.com/cappuccino3044vaps
 | Python | ⭐⭐⭐⭐ |
 | 信号処理 | ⭐⭐⭐⭐ |
 | 機械学習 | ⭐⭐⭐ |
-| RaspberryPi | ⭐⭐⭐⭐ |
+| RaspberryPi | ⭐⭐ |
 
 </div>
 </details>
@@ -131,6 +131,3 @@ VRシステムはUnityを使用して実装しています。患者さんが楽�
 
 </div>
 
-<div align="right">
-<i>Last updated: 2023年12月</i>
-</div>

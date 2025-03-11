@@ -108,7 +108,7 @@ VRシステムは Unity を使用して実装しています。患者さんが�
       <h3>IoT開発</h3>
       <p>RaspberryPi を使った電子工作により、センシングや IoT デバイスの開発を行っています。</p>
       <div align="center">
-        <img src="figures/RasberryPi.jpg" alt="RaspberryPiプロジェクト" width="300">
+        <img src="figures/RasberryPi.JPG" alt="RaspberryPiプロジェクト" width="300">
       </div>
     </td>
   </tr>
@@ -131,4 +131,3 @@ VRシステムは Unity を使用して実装しています。患者さんが�
 </a>
 
 </div>
-

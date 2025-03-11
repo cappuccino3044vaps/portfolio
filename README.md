@@ -19,7 +19,7 @@
 
 ## 自己紹介
 大学院ではVR技術を活用したリハビリテーションシステムの研究開発に取り組んでいます。  
-研究外ではLLMや機械学習、電子工作などに自主的に取り組んでいます。  
+研究外ではLLMや機械学習、電子工作など自主的に取り組んでいます。  
 https://github.com/cappuccino3044vaps
 
 <div align="center">
@@ -92,13 +92,13 @@ VRシステムは Unity を使用して実装しています。患者さんが�
   <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
     <div style="width: 45%; min-width: 300px; text-align: center;">
       <h3>信号処理</h3>
-      <p>生体信号などのノイズを含む時系列データに対して、カルマンフィルタなどの手法を用いた信号処理技術を開発しています。</p>
-      <img src="figures/kalmanfilter.png" alt="カルマンフィルタ適用例" width="320">
+      <p>生体信号などのノイズを含む時系列データに対して、カルマンフィルタなどの手法を用いた信号処理技術を学んでいます。</p>
+      <img src="figures/kalmanfilter.png" alt="カルマンフィルタ適用例" width="300">
     </div>
     <div style="width: 45%; min-width: 300px; text-align: center;">
       <h3>IoT開発</h3>
-      <p>RaspberryPi を使った電子工作により、センシングや IoT デバイスの開発を行っています。</p>
-      <img src="figures/RasberryPi.JPG" alt="RaspberryPiプロジェクト" width="320">
+      <p>RaspberryPi を使った電子工作にも取り組んでいます。</p>
+      <img src="figures/RasberryPi.JPG" alt="RaspberryPiプロジェクト" width="300">
     </div>
   </div>
 </div>

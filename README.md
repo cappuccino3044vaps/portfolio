@@ -51,11 +51,11 @@ https://github.com/cappuccino3044vaps
 <div align="center">
   <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
     <div style="text-align: center;">
-      <img src="figures/MediaPipeHands.png" alt="MediaPipeによる手指認識" width="280">
+      <img src="figures/MediaPipeHands.png" alt="MediaPipeによる手指認識" width="300">
       <p><b>手指トラッキング技術</b></p>
     </div>
     <div style="text-align: center;">
-      <img src="figures/MediaPipe_3d.png" alt="3次元姿勢推定" width="280">
+      <img src="figures/MediaPipe_3d.png" alt="3次元姿勢推定" width="300">
       <p><b>3次元姿勢推定</b></p>
     </div>
   </div>
@@ -73,21 +73,16 @@ VRシステムは Unity を使用して実装しています。患者さんが�
 
 ### 脳血流計測実験
 <div align="center">
-  <img src="figures/experiment.png" alt="実験風景" width="450">
+  <img src="figures/experiment.png" alt="実験風景" width="300">
   <p><i>VRゴーグルと脳血流計測キャップを併用した実験風景</i></p>
 </div>
-
-<details>
-<summary>データ解析の詳細（クリックして展開）</summary>
 
 取得した脳血流データに信号処理を施して、統計的な検定を行います。主に MATLAB を使用しています。
 
 <div align="center">
-  <img src="figures/BrainMap.png" alt="脳活動マッピング" width="500">
+  <img src="figures/BrainMap.png" alt="脳活動マッピング" width="300">
   <p><i>脳活動の統計解析マップ</i></p>
 </div>
-
-</details>
 
 ---
 

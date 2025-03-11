@@ -67,7 +67,7 @@ VRシステムは Unity を使用して実装しています。患者さんが�
 <div align="center">
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
     <img src="figures/Unity.png" alt="Unity開発画面" width="380">
-    <img src="figures/VR_screen.jpg" alt="VR画面表示例" width="380">
+    <img src="figures/Handtracking.JPG" alt="ハンドトラッキング" width="380">
   </div>
 </div>
 
@@ -107,6 +107,7 @@ VRシステムは Unity を使用して実装しています。患者さんが�
 
 <div align="center">
   <p>ゲーム・読書・ピアノ演奏・将棋・料理/お菓子作り・アウトドア活動（キャンプ・釣り）</p>
+  <img src="figures/camping.JPG" alt="琵琶湖キャンプ" width="300">
 </div>
 
 ---

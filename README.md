@@ -23,7 +23,7 @@
 https://github.com/cappuccino3044vaps
 
 <div align="center">
-  <img src="figures/profile.jpg" alt="プロフィール写真" width="300">
+  <img src="figures/profile.jpg" alt="プロフィール写真" width="250">
 </div>
 
 <details>
@@ -49,33 +49,31 @@ https://github.com/cappuccino3044vaps
 > 姿勢推定モデルを使って関節座標を取得し、解析を行っています。これにより、リハビリテーションの効果を定量的に評価できるシステムの開発を進めています。
 
 <div align="center">
-  <table>
-    <tr>
-      <td><img src="figures/MediaPipeHands.png" alt="MediaPipeによる手指認識" width="250"></td>
-      <td><img src="figures/MediaPipe_3d.png" alt="3次元姿勢推定" width="250"></td>
-    </tr>
-    <tr>
-      <td align="center"><b>手指トラッキング技術</b></td>
-      <td align="center"><b>3次元姿勢推定</b></td>
-    </tr>
-  </table>
+  <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+    <div style="text-align: center;">
+      <img src="figures/MediaPipeHands.png" alt="MediaPipeによる手指認識" width="280">
+      <p><b>手指トラッキング技術</b></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="figures/MediaPipe_3d.png" alt="3次元姿勢推定" width="280">
+      <p><b>3次元姿勢推定</b></p>
+    </div>
+  </div>
 </div>
 
 ### VR開発環境
 VRシステムは Unity を使用して実装しています。患者さんが楽しみながらリハビリに取り組める環境の構築を目指しています。
 
 <div align="center">
-  <table>
-    <tr>
-      <td><img src="figures/Unity.png" alt="Unity開発画面" width="300"></td>
-      <td><img src="figures/VR_screen.jpg" alt="VR画面表示例" width="300"></td>
-    </tr>
-  </table>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <img src="figures/Unity.png" alt="Unity開発画面" width="380">
+    <img src="figures/VR_screen.jpg" alt="VR画面表示例" width="380">
+  </div>
 </div>
 
 ### 脳血流計測実験
 <div align="center">
-  <img src="figures/experiment.png" alt="実験風景" width="350">
+  <img src="figures/experiment.png" alt="実験風景" width="450">
   <p><i>VRゴーグルと脳血流計測キャップを併用した実験風景</i></p>
 </div>
 
@@ -85,7 +83,7 @@ VRシステムは Unity を使用して実装しています。患者さんが�
 取得した脳血流データに信号処理を施して、統計的な検定を行います。主に MATLAB を使用しています。
 
 <div align="center">
-  <img src="figures/BrainMap.png" alt="脳活動マッピング" width="450">
+  <img src="figures/BrainMap.png" alt="脳活動マッピング" width="500">
   <p><i>脳活動の統計解析マップ</i></p>
 </div>
 
@@ -95,24 +93,20 @@ VRシステムは Unity を使用して実装しています。患者さんが�
 
 ## 技術スキル
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
+<div align="center">
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+    <div style="width: 45%; min-width: 300px; text-align: center;">
       <h3>信号処理</h3>
       <p>生体信号などのノイズを含む時系列データに対して、カルマンフィルタなどの手法を用いた信号処理技術を開発しています。</p>
-      <div align="center">
-        <img src="figures/kalmanfilter.png" alt="カルマンフィルタ適用例" width="300">
-      </div>
-    </td>
-    <td width="50%" valign="top">
+      <img src="figures/kalmanfilter.png" alt="カルマンフィルタ適用例" width="320">
+    </div>
+    <div style="width: 45%; min-width: 300px; text-align: center;">
       <h3>IoT開発</h3>
       <p>RaspberryPi を使った電子工作により、センシングや IoT デバイスの開発を行っています。</p>
-      <div align="center">
-        <img src="figures/RasberryPi.JPG" alt="RaspberryPiプロジェクト" width="300">
-      </div>
-    </td>
-  </tr>
-</table>
+      <img src="figures/RasberryPi.JPG" alt="RaspberryPiプロジェクト" width="320">
+    </div>
+  </div>
+</div>
 
 ## 趣味
 

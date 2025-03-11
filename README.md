@@ -101,7 +101,7 @@ VRシステムは Unity を使用して実装しています。患者さんが�
       <h3>信号処理</h3>
       <p>生体信号などのノイズを含む時系列データに対して、カルマンフィルタなどの手法を用いた信号処理技術を開発しています。</p>
       <div align="center">
-        <img src="figures/Kalmanfilter.png" alt="カルマンフィルタ適用例" width="300">
+        <img src="figures/kalmanfilter.png" alt="カルマンフィルタ適用例" width="300">
       </div>
     </td>
     <td width="50%" valign="top">
